@@ -8,4 +8,5 @@ class ValuteRepository(
 
     fun getValuteRepository(): List<Valute> = valuteList
 
+    fun getValute(id: String) = valuteList.firstOrNull { id == it.ID }
 }

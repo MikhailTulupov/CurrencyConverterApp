@@ -25,6 +25,18 @@ class ListActivity : AppCompatActivity() {
     private lateinit var adapter: ValuteAdapter
     private lateinit var lastetOnClickValute: Valute
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("EXTRA_VALUTE_ID",lastetOnClickValute.ID)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        val id = savedInstanceState.getString("EXTRA_VALUTE_ID")
+        lastetOnClickValute = id?.let { ValuteRepository().getValute(it) }!!
+        super.onRestoreInstanceState(savedInstanceState)
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
