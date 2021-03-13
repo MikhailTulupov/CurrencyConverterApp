@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.currencyconverterapp.databinding.ItemListBinding
-import com.hfad.currencyconverterapp.model.Valute
+import com.hfad.currencyconverterapp.data.model.Currency
 
 
-class ValuteAdapter(private val itemOnClick: (Valute) -> Unit) :
-    RecyclerView.Adapter<ValuteAdapter.ValuteViewHolder>() {
+class CurrencyAdapter(private val itemOnClick: (Currency) -> Unit) :
+    RecyclerView.Adapter<CurrencyAdapter.ValuteViewHolder>() {
 
-    var valute = emptyList<Valute>()
+    var valute = emptyList<Currency>()
         set(value) {
             field = value
             notifyDataSetChanged()

@@ -6,15 +6,21 @@
     <data>
         <variable
             name="valute"
-            type="com.hfad.currencyconverterapp.model.Valute"
+            type="com.hfad.currencyconverterapp.data.model.Currency"
             />
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"

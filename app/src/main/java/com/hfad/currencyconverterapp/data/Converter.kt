@@ -1,6 +1,6 @@
-package com.hfad.currencyconverterapp.model
+package com.hfad.currencyconverterapp.data
 
-class Currency // this class currency rub valute to other valute
+class Converter // this class currency rub currency to other currency
     (private val rubValue: Double,
      private val otherValue: Double,
      private val nominal: Int) {

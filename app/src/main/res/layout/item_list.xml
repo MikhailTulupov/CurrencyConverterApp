@@ -6,7 +6,7 @@
     <data>
         <variable
             name="valute"
-            type="com.hfad.currencyconverterapp.model.Valute"
+            type="com.hfad.currencyconverterapp.data.model.Currency"
             />
     </data>
 
@@ -55,7 +55,9 @@
                 android:gravity="end"
                 android:paddingEnd="30sp"
                 tools:text="73"
-                android:text="@{String.format(@string/format_pattern,valute.value)}"/>
+                android:text="@{String.format(@string/format_pattern,valute.value)}"
+                tools:ignore="RtlSymmetry"
+                />
 
         </LinearLayout>
 
