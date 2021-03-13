@@ -1,6 +1,5 @@
 package com.hfad.currencyconverterapp.jsonParser
 
-import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
@@ -35,11 +34,11 @@ class JsonParser {
          * @return mutable list type Currency
          */
 
-        fun parseJson(sUrl: String, context: Context): MutableList<Currency> {
+        fun parseJson(sUrl: String): MutableList<Currency> {
 
             //get root json object from network
             val root: JsonObject? =
-                RetrieveJSONTask(sUrl, context).loadInBackground()
+                RetrieveJSONTask().execute(sUrl).get()
             val currencyJsObj = root?.getAsJsonObject(CURRENCY)
 
             // gets JSON objects in JSON object "Valute"

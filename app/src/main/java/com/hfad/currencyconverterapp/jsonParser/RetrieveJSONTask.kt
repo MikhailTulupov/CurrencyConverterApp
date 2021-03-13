@@ -1,6 +1,7 @@
 package com.hfad.currencyconverterapp.jsonParser
 
 import android.content.Context
+import android.os.AsyncTask
 import androidx.loader.content.AsyncTaskLoader
 import com.google.gson.Gson
 import com.google.gson.JsonObject
@@ -18,16 +19,15 @@ import java.net.URL
  * @param context
  */
 
-class RetrieveJSONTask(private val sUrl: String, context: Context) : AsyncTaskLoader<JsonObject>(context) {
+class RetrieveJSONTask : AsyncTask<String,Void,JsonObject>() {
 
     /**
-     * Load in background
+     * do in background
      *
      * @return Json object
      */
-
-    override fun loadInBackground(): JsonObject? {
-        val url = URL(sUrl)
+    override fun doInBackground(vararg params: String?): JsonObject {
+        val url = URL(params[0])
         url.openConnection()
         val inputStreamData = url.openStream().reader()
         return Gson().fromJson(inputStreamData, JsonObject::class.java)

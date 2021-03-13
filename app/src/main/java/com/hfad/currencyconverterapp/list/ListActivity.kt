@@ -12,7 +12,6 @@ import android.os.SystemClock
 import android.text.Editable
 import android.text.SpannableStringBuilder
 import android.text.TextWatcher
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -103,7 +102,7 @@ class ListActivity : AppCompatActivity() {
             binding.valueRusValuteText.isEnabled = true
         }
 
-        adapter.valute = currencyRepository.getCurrencyRepository()
+        adapter.currencyList = currencyRepository.getCurrencyRepository()
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
@@ -142,7 +141,7 @@ class ListActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_update) {
-            currencyRepository = FillDBTask(this, "update").loadInBackground()
+            currencyRepository = FillDBTask(baseContext, "update").loadInBackground()
         }
         return super.onOptionsItemSelected(item)
     }
