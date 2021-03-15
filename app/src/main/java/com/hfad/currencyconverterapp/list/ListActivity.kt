@@ -138,7 +138,7 @@ class ListActivity : AppCompatActivity(), SettableAlarmManager {
             lastedOnClickCurrency = currencyRepository.getCurrency(currencyID)!!
             binding.valueRusCurrencyText.isEnabled = textIsEnabled
             binding.changeCurrencyName.text = lastedOnClickCurrency.Name
-        } catch (exc: UninitializedPropertyAccessException) {
+        } catch (exc: Exception) {
         }
     }
 

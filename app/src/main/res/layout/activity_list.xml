@@ -64,7 +64,10 @@
                 <EditText
                     android:id="@+id/change_value"
                     style="@style/EditText"
-                    android:enabled="false"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusableInTouchMode="false"
                     android:inputType="numberDecimal"
                     android:autofillHints=""
                     tools:ignore="LabelFor"
