@@ -5,39 +5,49 @@
 
     <data>
         <variable
-            name="valute"
+            name="currency"
             type="com.hfad.currencyconverterapp.data.model.Currency"
             />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/listPreferredItemHeightLarge"
         android:orientation="horizontal"
-        android:layout_margin="5sp">
+        android:layout_margin="5sp"
+        android:baselineAligned="false"
+        android:background="@drawable/custom_border"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:gravity="center"
+        >
 
         <LinearLayout
-            android:layout_marginStart="20sp"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="3"
+            >
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/valute_name"
+                android:id="@+id/currency_name"
                 tools:text="US Dollar"
-                android:text="@{valute.name}"
-                android:textAppearance="?android:textAppearanceListItem"/>
+                android:text="@{currency.name}"
+                android:textAppearance="?android:textAppearanceListItem"
+                android:fontFamily="@font/raleway_bold"
+                />
 
             <TextView
-                android:id="@+id/valute_char_code"
+                android:id="@+id/currency_char_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="USD"
-                android:text="@{valute.charCode}"
-                android:textAppearance="?android:textAppearanceMedium"/>
+                android:text="@{currency.charCode}"
+                android:textAppearance="?android:textAppearanceListItemSmall"
+                android:fontFamily="@font/raleway_light"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -50,13 +60,15 @@
                 android:id="@+id/valute_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:paddingBottom="10dp"
                 android:textAppearance="?android:textAppearanceListItem"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorOrange"
                 android:gravity="end"
-                android:paddingEnd="30sp"
-                tools:text="73"
-                android:text="@{String.format(@string/format_pattern,valute.value)}"
+                tools:text="75"
+                android:text="@{String.format(@string/format_pattern,currency.value)}"
                 tools:ignore="RtlSymmetry"
+                android:fontFamily="@font/raleway_medium"
                 />
 
         </LinearLayout>

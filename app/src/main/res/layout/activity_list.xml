@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="valute"
+            name="currency"
             type="com.hfad.currencyconverterapp.data.model.Currency"
             />
     </data>
@@ -24,63 +24,52 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="160dp"
             android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:layout_gravity="top"
             >
 
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:orientation="vertical"
-                android:layout_margin="10sp"
-                android:padding="20sp"
-                android:layout_weight="1"
-                >
+            <LinearLayout style="@style/LinerLayoutForCurrency">
+
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="@string/valute_rus"/>
+                    style="@style/TextView"
+                    android:textColor="@color/colorBlack"
+                    android:text="@string/currency_rus"
+                    />
+
                 <EditText
-                    android:id="@+id/value_rus_valute_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    tools:text="1"
-                    android:text="1"
+                    android:id="@+id/value_rus_currency_text"
+                    style="@style/EditText"
+                    android:enabled="false"
+                    android:autofillHints=""
+                    tools:ignore="LabelFor"
+                    android:text="@string/_1"
                     android:inputType="numberDecimal"
-                    android:layout_marginTop="20sp"/>
+                    tools:text="1"
+                    />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|bottom"
-                android:orientation="vertical"
-                android:layout_margin="10sp"
-                android:padding="20sp"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                >
+            <LinearLayout style="@style/LinerLayoutForCurrency">
+
                 <TextView
-                    android:id="@+id/change_valute_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:id="@+id/change_currency_name"
+                    style="@style/TextView"
                     tools:text="US Dollar"
-                    android:text="@{valute.name}"/>
+                    android:gravity="center"
+                    android:textColor="@color/colorBlack"
+                    />
+
                 <EditText
                     android:id="@+id/change_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    tools:text="1"
-                    android:text="@{String.valueOf(valute.value)}"
-                    android:gravity="center"
+                    style="@style/EditText"
+                    android:enabled="false"
                     android:inputType="numberDecimal"
-                    android:layout_marginTop="20sp"/>
+                    android:autofillHints=""
+                    tools:ignore="LabelFor"
+                    tools:text="1"
+                    />
 
             </LinearLayout>
 

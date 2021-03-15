@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">CurrencyConverterApp</string>
-    <string name="valute_rus">Русские рубли</string>
+    <string name="app_name">Currency Converter</string>
+    <string name="currency_rus">Русские рубли</string>
     <string name="format_pattern">%1$.2f</string>
     <string name="update">update data</string>
+    <string name="_1">1</string>
 </resources>

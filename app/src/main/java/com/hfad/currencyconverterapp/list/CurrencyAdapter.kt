@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.hfad.currencyconverterapp.databinding.ItemListBinding
 import com.hfad.currencyconverterapp.data.model.Currency
+import com.hfad.currencyconverterapp.databinding.ItemListBinding
 
 /**
  * Currency adapter
@@ -43,7 +43,7 @@ class CurrencyAdapter(private val itemOnClick: (Currency) -> Unit) :
      */
     override fun onBindViewHolder(holder: CurrencyViewHolder, position: Int) {
         val currency = currencyList.get(position)
-        holder.binding?.valute = currency
+        holder.binding?.currency = currency
         holder.binding?.root?.setOnClickListener { itemOnClick(currency) }
     }
 
