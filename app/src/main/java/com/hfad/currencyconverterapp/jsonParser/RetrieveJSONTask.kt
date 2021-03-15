@@ -1,8 +1,6 @@
 package com.hfad.currencyconverterapp.jsonParser
 
-import android.content.Context
 import android.os.AsyncTask
-import androidx.loader.content.AsyncTaskLoader
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import java.net.URL

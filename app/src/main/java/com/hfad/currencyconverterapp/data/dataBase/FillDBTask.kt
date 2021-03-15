@@ -1,11 +1,9 @@
 package com.hfad.currencyconverterapp.data.dataBase
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
-import android.os.SystemClock
 import android.widget.Toast
 import androidx.loader.content.AsyncTaskLoader
 import com.hfad.currencyconverterapp.data.model.Currency
