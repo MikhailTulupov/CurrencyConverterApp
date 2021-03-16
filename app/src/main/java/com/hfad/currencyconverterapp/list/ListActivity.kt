@@ -86,7 +86,15 @@ class ListActivity : AppCompatActivity(), SettableAlarmManager {
         adapter = CurrencyAdapter {
             binding.changeCurrencyName.text = it.Name
 
-            val rubValue = binding.valueRusCurrencyText.text.toString().toDouble()
+            var rubValue: Double
+
+            rubValue = try {
+                binding.valueRusCurrencyText.text.toString().toDouble()
+            } catch (exc: NumberFormatException) {
+                0.0
+            }
+//            val rubValue = binding.valueRusCurrencyText.text.toString().toDouble()
+
             val currency = Converter(rubValue, it.Value, it.Nominal).currency()
 
             binding.changeValue.text = SpannableStringBuilder(DecimalFormat("#.##").format(currency))
