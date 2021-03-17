@@ -42,22 +42,22 @@ class ListActivity : AppCompatActivity(), SettableAlarmManager {
     private var textIsEnabled by Delegates.notNull<Boolean>()
 
     companion object {
-        private const val EXTRA_CURRENCY_ID = "EXTRA_CURRENCY_ID"
-        private const val EXTRA_IS_ENABLED = "EXTRA_IS_ENABLED"
+        private const val KEY_CURRENCY_ID = "KEY_CURRENCY_ID"
+        private const val KEY_IS_ENABLED = "KEY_IS_ENABLED"
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         try {
-            outState.putString(EXTRA_CURRENCY_ID, currencyID)
-            outState.putBoolean(EXTRA_IS_ENABLED, binding.valueRusCurrencyText.isEnabled)
+            outState.putString(KEY_CURRENCY_ID, currencyID)
+            outState.putBoolean(KEY_IS_ENABLED, binding.valueRusCurrencyText.isEnabled)
         } catch (exc: UninitializedPropertyAccessException) {
         }
         super.onSaveInstanceState(outState)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        currencyID = savedInstanceState.getString(EXTRA_CURRENCY_ID).toString()
-        textIsEnabled = savedInstanceState.getBoolean(EXTRA_IS_ENABLED)
+        currencyID = savedInstanceState.getString(KEY_CURRENCY_ID).toString()
+        textIsEnabled = savedInstanceState.getBoolean(KEY_IS_ENABLED)
         super.onRestoreInstanceState(savedInstanceState)
     }
 
