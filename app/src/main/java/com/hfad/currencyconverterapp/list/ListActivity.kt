@@ -140,6 +140,13 @@ class ListActivity : AppCompatActivity(), SettableAlarmManager {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        currencyRepository = FillDBTask(baseContext, "getDB").loadInBackground()
+        adapter.currencyList = currencyRepository.getCurrencyRepository()
+    }
+
+
     override fun onResume() {
         super.onResume()
         try {
@@ -159,6 +166,7 @@ class ListActivity : AppCompatActivity(), SettableAlarmManager {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_update) {
             currencyRepository = FillDBTask(baseContext, "update").loadInBackground()
+            adapter.currencyList = currencyRepository.getCurrencyRepository()
         }
         return super.onOptionsItemSelected(item)
     }
