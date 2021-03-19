@@ -86,9 +86,7 @@ class ListActivity : AppCompatActivity(), SettableAlarmManager {
         adapter = CurrencyAdapter {
             binding.changeCurrencyName.text = it.Name
 
-            var rubValue: Double
-
-            rubValue = try {
+            val rubValue: Double = try {
                 binding.valueRusCurrencyText.text.toString().toDouble()
             } catch (exc: NumberFormatException) {
                 0.0
@@ -142,6 +140,12 @@ class ListActivity : AppCompatActivity(), SettableAlarmManager {
 
     override fun onStart() {
         super.onStart()
+        currencyRepository = FillDBTask(baseContext, "getDB").loadInBackground()
+        adapter.currencyList = currencyRepository.getCurrencyRepository()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
         currencyRepository = FillDBTask(baseContext, "getDB").loadInBackground()
         adapter.currencyList = currencyRepository.getCurrencyRepository()
     }
